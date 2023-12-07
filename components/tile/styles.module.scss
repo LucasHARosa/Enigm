@@ -1,0 +1,36 @@
+.tile {
+  transition: all 0.7ds;
+  font-size: 2em;
+  color: white;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.192);
+  border: 0.05em solid #408bda50;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  background-color: #9c969475;
+  border-radius: 0.8rem;
+
+  &.active {
+    background: #463f4a81;
+    border: 1px solid #e6e2e175;
+  }
+
+  &.notInWord {
+    background: #4b4b4e;
+  }
+
+  &.inWordWrongPosition {
+    background: #c0a428;
+  }
+
+  &.inWordRightPosition {
+    background: #3a8519;
+  }
+
+  &.lastTile {
+    display: none;
+  }
+}

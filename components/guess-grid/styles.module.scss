@@ -1,0 +1,10 @@
+.guessGrid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1;
+  grid-template-columns: repeat(5, 3.5em);
+  grid-template-rows: repeat(6, 3.5em);
+  gap: 0.25em;
+  margin-bottom: 1.5em;
+}
