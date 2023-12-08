@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 import { Tutorial } from "../components/tutorialModal/Tutorial";
 import { createContext, useEffect, useState } from "react";
 import { EndScreen } from "../components/endModal/EndScreen";
-import { getLocalStorage } from "../lib/helpers";
+import { getGameWord, getLocalStorage } from "../lib/helpers";
 import { ParticleAmong } from "../components/Particles/particlesAmong";
 
 interface gameEndedContext {
@@ -29,8 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       // setIsOpen(false);
     }
     localStorage.setItem("@Verbo:FirstTime", "True");
-    const dailyWord = getLocalStorage("@Verbo:gameData");
-    setDailyWord(dailyWord.wordAtTime);
+    
+    const word = getGameWord()||"";
+    setDailyWord(word);
   }, []);
 
   useEffect(() => {

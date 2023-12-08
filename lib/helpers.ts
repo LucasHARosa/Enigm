@@ -83,6 +83,15 @@ export function saveGameData(gameData: gameData) {
   localStorage.setItem("@Verbo:gameData", JSON.stringify(gameData));
 }
 
+export function saveGameWord(word: string) {
+  localStorage.setItem("@Verbo:word", word);
+}
+
+export function getGameWord() {
+  const word = localStorage.getItem("@Verbo:word");
+  return word;
+}
+
 export function loadGameData(gameData: gameData, setters: setters) {
   setters.setTiles(gameData.tiles);
   setters.setActiveRow(gameData.activeRow);
@@ -124,24 +133,24 @@ export function getCopyPaste(wordColors: number[]) {
   }
   
 
-  let copyPaste = `Joguei Verbo #${getGameNum()}   ${num}/6 \n\n`;
+  let copyPaste = `Joguei ENIGM #${getGameNum()}   ${num}/6 \n\n`;
   let indexes = [5, 10, 15, 20, 25];
   noZeros.forEach((el, index) => {
     switch (el) {
       case 1:
         copyPaste += indexes.includes(index + 1)
-          ? ":black_large_square:\n"
-          : ":black_large_square:";
+          ? "⬛️\n"
+          : "⬛️";
         break;
       case 2:
         copyPaste += indexes.includes(index + 1)
-          ? ":yellow_square:\n"
-          : ":yellow_square:";
+          ? "🟨\n"
+          : "🟨";
         break;
       case 3:
         copyPaste += indexes.includes(index + 1)
-          ? ":green_square:\n"
-          : ":green_square:";
+          ? "🟩\n"
+          : "🟩";
         break;
 
       default:

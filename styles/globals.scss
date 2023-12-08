@@ -68,15 +68,22 @@ body {
 }
 
 .greenText {
-  color: #3ff12f;
+  padding: 0px 7px;
+  background-color: rgb(63, 241, 47, 0.5);
+  border-radius: 8px;
+  
 }
 
 .yellowText {
-  color: #e4ca53;
+  padding: 0px 7px;
+  background-color: rgb(228, 202, 83, 0.5);
+  border-radius: 8px;
 }
 
 .grayText {
-  color: #868699;
+  padding: 0px 7px;
+  background-color: rgb(134, 134, 153, 0.5);
+  border-radius: 8px;
 }
 
 .goodLuck {
@@ -118,5 +125,20 @@ body {
   a,
   a:visited {
     text-decoration: none;
+  }
+}
+
+.comecar{
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #4d4749;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.1s;
+
+  &:hover {
+    background-color: #4d4749b9;
   }
 }

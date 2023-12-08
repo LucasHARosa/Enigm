@@ -10,6 +10,7 @@ import {
   getLocalStorage,
   loadGameData,
   saveGameData,
+  saveGameWord,
   toastError,
 } from "../lib/helpers";
 import { validateWord } from "../lib/helpers";
@@ -66,8 +67,26 @@ const Game: NextPage = () => {
     setGuess(tiles.slice(rowStart, rowStart + 5));
   }, [tiles, rowStart]);
 
+  function restartGame(){
+    setTiles(arr);
+    setActiveTile(0);
+    setActiveRow(0);
+    setIsEndOfRow(false);
+    setGuess([]);
+    setWordColors(arr2);
+    setIsKeyboardActive(true);
+    setNotInWord([]);
+    setInWordWrongPosition([]);
+    setInWordCorrectPosition([]);
+    setGameEnded(false);
+    setDailyWord("");
+    setWords([]);
+  }
+
   useEffect(() => {
-    setDailyWord(getDailyWord());
+    const word = getDailyWord();
+    setDailyWord(word);
+    saveGameWord(word);
 
     const previousGameData: gameData = getLocalStorage("@Verbo:gameData");
     const setters = {
@@ -304,7 +323,7 @@ const Game: NextPage = () => {
         handleDelete={handleDelete}
         handleSubmit={handleSubmit}
       />
-      {/* <button>
+      {/* <button onClick={restartGame}>
         {dailyWord}
       </button> */}
     </>

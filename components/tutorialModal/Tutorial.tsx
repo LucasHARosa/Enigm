@@ -29,12 +29,9 @@ export function Tutorial({ isOpen, onRequestClose }: TutorialProps) {
         Letras com o fundo <span className="grayText">Cinza</span> não fazem
         parte da palavra
       </p>
-      
-      <p>
-        Uma palavra nova é escolhida a cada dia.
-      </p>
-        
-      
+      <button className="comecar" onClick={onRequestClose}>
+        Começar
+      </button>
       
     </Modal>
   );
