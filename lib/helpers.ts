@@ -107,7 +107,7 @@ export function loadGameData(gameData: gameData, setters: setters) {
 }
 
 function getGameNum() {
-  const offsetFromDate = new Date(2022, 2, 4).getTime();
+  const offsetFromDate = new Date(2024, 1, 1).getTime();
   const msOffset = Date.now() - offsetFromDate;
   const dayOffset = msOffset / 1000 / 60 / 60 / 24;
   return Math.ceil(dayOffset);
@@ -133,7 +133,7 @@ export function getCopyPaste(wordColors: number[]) {
   }
   
 
-  let copyPaste = `Joguei ENIGM #${getGameNum()}   ${num}/6 \n\n`;
+  let copyPaste = `Joguei ENIGM #${getGameNum()}   ${num}/6 \nhttps://enigm.vercel.app/\n\n`;
   let indexes = [5, 10, 15, 20, 25];
   noZeros.forEach((el, index) => {
     switch (el) {
